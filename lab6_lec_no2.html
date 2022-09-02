@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        input{
+            width: 10%;
+        }
+        input#button{
+            width: 8%;
+        }
+    </style>
+    <script>
+        function calculator(){
+            let fir = document.getElementById("first");
+            let vlfir = parseInt(fir.value);
+            let op = document.getElementById("operation");
+            let vlop = op.value;
+            let sec = document.getElementById("second");
+            let vlsec = parseInt(sec.value);
+            console.log(vlfir);
+            console.log(vlop);
+            console.log(vlsec);
+            let sum = document.getElementById("sum");
+            switch(vlop){
+                case '+':sum.value = vlfir + vlsec;break;
+                case '-':sum.value = vlfir - vlsec;break;
+                case '*':sum.value = vlfir * vlsec;break;
+                case '/':sum.value = vlfir / vlsec;break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="first">
+        <select id="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" id="second"> = 
+        <input type="text" id="sum">
+        <input type="button" id="button" value="Compute" onclick="calculator()">
+    </form>
+</body>
+</html>
